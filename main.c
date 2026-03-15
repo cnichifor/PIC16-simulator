@@ -17,6 +17,7 @@ int main(){
     alu.in_b = &b;
     alu.out = &c;
 
+    // wiring alu with W reg
     wire(alu.out, w.data);
 
     add(&alu);
