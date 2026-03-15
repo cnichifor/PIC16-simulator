@@ -1,7 +1,7 @@
-#include <stdint.h>
-
 #ifndef ALU_H
 #define ALU_H
+
+#include <stdint.h>
 
 typedef struct alu {
     uint8_t* in_a;
