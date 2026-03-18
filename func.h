@@ -3,6 +3,6 @@
 
 #include <stdint.h>
 
-void wire(uint8_t *out, uint8_t *in);
+void wire(uint8_t **dest, uint8_t *src);
 
 #endif

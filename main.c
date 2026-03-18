@@ -3,27 +3,32 @@
 #include "alu.h"
 #include "register.h"
 #include "func.h"
+#include "pic16.h"
 
 int main(){
     printf("PIC16\n");
 
-    uint8_t a = 255;
-    uint8_t b = 1;
+    uint8_t a = 5;
+    uint8_t b = 3;
     uint8_t c;
 
+    pic16 PIC;
     alu alu;
-    reg w;
-    alu.in_a = &a;
-    alu.in_b = &b;
-    alu.out = &c;
+    PIC.ALU = &alu;
+    uint8_t w;
+    PIC.W = &w;
+  
+
+    PIC.ALU->in_a = &a;
+    PIC.ALU->in_b = &b;
+    PIC.ALU->out = &c;
 
     // wiring alu with W reg
-    wire(alu.out, w.data);
+    wire(&PIC.ALU->out, PIC.W);
 
-    add(&alu);
+    add(PIC.ALU);
 
-
-    printf("%u\n", *w.data);
+    printf("%u\n", *PIC.W);
 
     return 0;
 }

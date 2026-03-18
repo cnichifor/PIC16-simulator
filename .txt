@@ -1,6 +1,9 @@
 Versions:
 0.0.1 "ALU with add"
 0.0.2 "W register and wire function"
+0.0.3 "PIC structure; removed reg struct and using uint8_t dtype for alocate regiters; rewrited main"
 
 To add:
 ?and, or, xor, rt, sfr
+
+SFR: [IRP, RP1, RP0, !TO, !PD, Z, DC, C]
